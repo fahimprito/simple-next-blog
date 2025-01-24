@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 
 export default function Home() {
-  console.log("log here");
+  // console.log("log here");
 
   return (
     <div className="container mx-auto">

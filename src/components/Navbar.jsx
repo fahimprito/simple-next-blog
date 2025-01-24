@@ -1,8 +1,10 @@
-import {RegisterLink, LoginLink} from "@kinde-oss/kinde-auth-nextjs/server";
+import { RegisterLink, LoginLink, getKindeServerSession, LogoutLink } from "@kinde-oss/kinde-auth-nextjs/server";
 import Link from "next/link";
 import { Button } from "./ui/button";
 
-export default function Navbar() {
+export default async function Navbar() {
+    const { getUser } = getKindeServerSession();
+    const user = await getUser();
 
     return (
         <nav className="bg-gray-300 p-4">
@@ -18,12 +20,23 @@ export default function Navbar() {
                     <Link href="/profile" className="text-gray-600 hover:text-gray-900">
                         Profile
                     </Link>
-                    <LoginLink>
-                        <Button>Sign in</Button>
-                    </LoginLink>
-                    <RegisterLink>
-                        <Button>Sign up</Button>
-                    </RegisterLink>
+                    {
+                        user ? (
+                            <LogoutLink>
+                                <Button>Logout</Button>
+                            </LogoutLink>
+
+                        ) : (
+                            <>
+                                <LoginLink>
+                                    <Button>Sign in</Button>
+                                </LoginLink>
+                                <RegisterLink>
+                                    <Button>Sign up</Button>
+                                </RegisterLink>
+                            </>
+                        )
+                    }
                 </div>
             </div>
         </nav>
