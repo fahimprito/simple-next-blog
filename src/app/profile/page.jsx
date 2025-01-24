@@ -2,7 +2,7 @@ export default function profile() {
     return (
         <div className="h-80 mt-56 flex flex-col items-center">
             <img
-                className="w-40 h-40 rounded-full border-2 object-cover"
+                className="w-40 h-40 rounded-full border-2 border-blue-300 object-cover"
                 src="https://i.ibb.co.com/Hg399JQ/foto-sushi-6anudmp-ILw4-unsplash.jpg"
                 alt="profile image"
             />
