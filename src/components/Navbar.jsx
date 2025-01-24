@@ -17,9 +17,14 @@ export default async function Navbar() {
                     <Link href="/blogs" className="text-gray-600 hover:text-gray-900">
                         Blogs
                     </Link>
-                    <Link href="/profile" className="text-gray-600 hover:text-gray-900">
-                        Profile
-                    </Link>
+                    {
+                        user && (
+                            <Link href="/profile" className="text-gray-600 hover:text-gray-900">
+                                Profile
+                            </Link>
+                        )
+                    }
+
                     {
                         user ? (
                             <LogoutLink>
