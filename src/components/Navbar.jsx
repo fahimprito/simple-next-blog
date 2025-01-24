@@ -1,4 +1,6 @@
+import {RegisterLink, LoginLink} from "@kinde-oss/kinde-auth-nextjs/server";
 import Link from "next/link";
+import { Button } from "./ui/button";
 
 export default function Navbar() {
 
@@ -16,12 +18,12 @@ export default function Navbar() {
                     <Link href="/profile" className="text-gray-600 hover:text-gray-900">
                         Profile
                     </Link>
-                    <Link href="/signin" className="text-gray-600 hover:text-gray-900">
-                        Sign In
-                    </Link>
-                    <Link href="/signup" className="text-gray-600 hover:text-gray-900">
-                        Sign Up
-                    </Link>
+                    <LoginLink>
+                        <Button>Sign in</Button>
+                    </LoginLink>
+                    <RegisterLink>
+                        <Button>Sign up</Button>
+                    </RegisterLink>
                 </div>
             </div>
         </nav>
