@@ -11,7 +11,8 @@ export default async function Page({ params }) {
 
     return (
         <div>
-            blogDetails {post.title}
+            <p>ID: {post.title}</p>
+            <p>TITLE: {post.title}</p>
         </div>
     );
 }

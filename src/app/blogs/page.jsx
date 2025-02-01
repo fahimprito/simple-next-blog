@@ -11,7 +11,7 @@ export default async function blogs() {
                 {posts.map((post) => (
                     <div key={post.id} className="w-56 h-56 border-2 rounded-lg p-5 flex flex-col justify-between">
                         <h2>Title: {post.title}</h2>
-                        <Link href="/[post-details]" as={`/blogDetails/${post.id}`} passHref>
+                        <Link href={`/blogs/${post.id}`}>
                             <Button>show details</Button>
                         </Link>
                     </div>
